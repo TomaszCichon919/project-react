@@ -9,9 +9,8 @@ import { useSelector } from 'react-redux';
 
 
 const SearchForm = () => {
-    const searchString = useSelector(state => state.searchString);
-
- 
+    let searchString = useSelector(state => state.searchString);
+ console.log('search', searchString);
     const [search, setSearch] = useState(searchString);
 
     const dispatch = useDispatch();
@@ -19,7 +18,7 @@ const SearchForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(updateSearch(search));
-        setSearch('');
+        
     };
     return (
         <form className={styles.searchForm} onSubmit={handleSubmit}>
