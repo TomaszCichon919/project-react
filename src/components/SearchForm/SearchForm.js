@@ -4,12 +4,15 @@ import Button from '../Button/Button'
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { updateSearch } from '../../redux/store'
+import { useSelector } from 'react-redux';
 
 
 
 const SearchForm = () => {
+    const searchString = useSelector(state => state.searchString);
+
  
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState(searchString);
 
     const dispatch = useDispatch();
    
