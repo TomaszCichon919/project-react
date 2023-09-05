@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput'
 import { useDispatch } from 'react-redux';
-import { addList } from '../../redux/store';
+import { addList } from '../../redux/listsRedux';
 
 
 const ListForm = (props) => {
@@ -19,11 +19,11 @@ const ListForm = (props) => {
 };
 
 	return (
-        <form onSubmit={handleSubmit} className={styles.columnForm}>
+        <form onSubmit={handleSubmit} className={styles.listForm}>
             <span className={styles.textField}>Title:</span>
              <TextInput placeholder="title..." value={title} onChange={e => setTitle(e.target.value)}>
              </TextInput>
-             <span className={styles.textField}>Icon:</span>
+             <span className={styles.textField}>description</span>
              <TextInput placeholder="description..." value={description} onChange={e => setDescription(e.target.value)}>
              </TextInput>
             <Button>Add List</Button>
