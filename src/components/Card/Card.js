@@ -1,16 +1,14 @@
 import styles from './Card.module.scss';
 import clsx from 'clsx';
-import { useSelector } from 'react-redux';
 import { removeCard } from '../../redux/cardsRedux';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+
 
 const Card = props => {
     
     const dispatch = useDispatch();
    const handleRemove = (cardsId) => {
     const string =cardsId.toString()
-    console.log("removeid", cardsId);
   dispatch(removeCard(string));
  
    };
@@ -30,5 +28,5 @@ const Card = props => {
 
 export default Card;
 
-//onClick={()=>handleClick(props.id)}
+
 

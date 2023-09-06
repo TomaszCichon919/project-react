@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { toggleCardFavorite } from '../../redux/cardsRedux';
 import { useDispatch } from 'react-redux';
 import { getFilteredCards } from '../../redux/store';
-import { removeCard } from '../../redux/cardsRedux';
+
 
 const Column = props => {
   const cards = useSelector(state => getFilteredCards(state, props.id));
