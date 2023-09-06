@@ -12,9 +12,16 @@
     font-weight: bold;
 }
 .isFavorite {
-    color: yellow;
+    color: yellow !important;
 }
 
 .star {
     color: red;
+    border: none;
+    background-color: #ffff;
+
+}
+.bin {
+    border: none;
+    background-color: #ffff;
 }

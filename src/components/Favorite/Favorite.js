@@ -3,22 +3,26 @@ import PageTitle from '../PageTitle/PageTitle';
 import Card from './../Card/Card';
 import { getFavoriteCards } from '../../redux/store';
 import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 
 const Favorite = () => {
-    const cards = useSelector(state => getFavoriteCards(state));
+    const favoriteCards = useSelector(state => getFavoriteCards(state));
+    console.log('fav',favoriteCards);
+
+    if(!favoriteCards.length) return <Navigate to="/" />
     return (
        
        <div className={styles.container}>
        <PageTitle>Favorite</PageTitle>
-            <div>
-            <p className={styles.subtitle}>your favourite cards</p>
+            <p className={styles.subtitle}>your favorite cards</p>
+            <div className={styles.wrapper}>
             <article className={styles.column}>
         <ul className={styles.cards}>
-        {cards.map(card => <Card key={card.id} title={card.title} />)}
+        {favoriteCards.map(favoriteCard => <Card key={favoriteCard.id} title={favoriteCard.title} isFavorite = {favoriteCard.isFavorite} />)}
       </ul>
       </article>
-            </div>
+      </div>
         </div>
             )
 }

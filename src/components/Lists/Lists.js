@@ -7,7 +7,7 @@ import ListForm from '../ListForm/ListForm'
 
 
 
-const List = () => {
+const Lists = () => {
     
   const lists = useSelector(getAllLists);
 
@@ -27,4 +27,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default Lists;

@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 
 const SearchForm = () => {
     let searchString = useSelector(state => state.searchString);
- console.log('search', searchString);
+ //console.log('search', searchString);
     const [search, setSearch] = useState(searchString);
 
     const dispatch = useDispatch();

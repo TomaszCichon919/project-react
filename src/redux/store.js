@@ -12,16 +12,8 @@ import searchStringReducer from './searchStringRedux';
   export const getFilteredCards = ({ cards, searchString }, columnId) => cards
   .filter(card => card.columnId === columnId && strContains(card.title, searchString));
 
-  export const getFavoriteCards = ({ cards}) => cards
+  export const getFavoriteCards = ({cards}) => cards
   .filter(card => card.isFavorite === true);
-
-
-  // action creators
-
-
-
-
-
 
 const subreducers = {
   lists: listsReducer,
